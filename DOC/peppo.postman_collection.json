@@ -1,0 +1,455 @@
+{
+	"info": {
+		"_postman_id": "d1fa2256-92c8-4295-8274-29094d508fee",
+		"name": "peppo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"password\":\"qwertyu\",\"mobile_number\":9111111111}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"newwww name\",\"password\":\"qwertyu\",\"confirmpassword\":\"qwertyu\",\"email\":\"saurabh@asdas.com\",\"mobile_number\":9111111111}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forgot_password(check user is present)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"mobile_number\":9111111111}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/forgot_password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"forgot_password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change_password",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"mobile_number\":9111111111,\"password\":\"qwertyu1\",\"confirmpassword\":\"qwertyu1\"}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/change_password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"change_password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_password(when logged in)",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibWVtYmVyX2lkIjpudWxsLCJuYW1lIjoic3VwZXIgYWRtaW4iLCJlbWFpbCI6InNhdXJhYmguc0Bob21lc2Z5LmluIiwicm9sZSI6InN1cGVydXNlciIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJzZWNyZXQiOiJBU2JBMnhjanBmOHk1YVNVRnNOQjJxTjV5eW1VQlNzNmVzM3FIb0ZwR2tlYzc1UkNlQmI4Y3BLYXVHZWZ3NXF5NCIsImp3dERhdGEiOnsiZXhwaXJlc0luIjoiNTBoIn0sImlhdCI6MTU5MTg1NzEwMCwiZXhwIjoxNTkyMDM3MTAwfQ.ybLcL7lrcGAT4DEjTX_uzROF9DuwEOAROlBRv3jzgNo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"currentpassword\":\"qwertyui\",\"password\":\"qwertyu1\",\"confirmpassword\":\"qwertyu1\"}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/update_password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"update_password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list(user list with filters)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTI2MzksIm5hbWUiOiJuZXd3d3cgbmFtZSIsImVtYWlsIjoic2F1cmFiaEBhc2Rhcy5jb20iLCJlbWFpbF92ZXJpZmllZCI6MCwiand0RGF0YSI6eyJleHBpcmVzSW4iOiI5MGgifSwiaWF0IjoxNTk5OTE2MzU4LCJleHAiOjE2MDAyNDAzNTh9.ObRw0SJeeAtiulGbVOyVvx1vU4v_S0_na0JFsjv3FY8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"size\": 10 , \"pageId\": 1, \"filters\": {\"createdAt\":{\"to\":\"2020-04-15\",\"from\":\"2020-03-25\"}}  }"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/users/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all address",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTI2MzksIm5hbWUiOiJuZXd3d3cgbmFtZSIsImVtYWlsIjoic2F1cmFiaEBhc2Rhcy5jb20iLCJlbWFpbF92ZXJpZmllZCI6MCwiand0RGF0YSI6eyJleHBpcmVzSW4iOiI5MGgifSwiaWF0IjoxNTk5OTE2MzU4LCJleHAiOjE2MDAyNDAzNTh9.ObRw0SJeeAtiulGbVOyVvx1vU4v_S0_na0JFsjv3FY8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/users/address?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"address"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add new address",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTI2MzksIm5hbWUiOiJuZXd3d3cgbmFtZSIsImVtYWlsIjoic2F1cmFiaEBhc2Rhcy5jb20iLCJlbWFpbF92ZXJpZmllZCI6MCwiand0RGF0YSI6eyJleHBpcmVzSW4iOiI5MGgifSwiaWF0IjoxNTk5OTE2MzU4LCJleHAiOjE2MDAyNDAzNTh9.ObRw0SJeeAtiulGbVOyVvx1vU4v_S0_na0JFsjv3FY8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"address1\": \"dfsdfsdfs\", \"address2\":\"whatttt\"}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/users/address",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get wish-list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTI2MzksIm5hbWUiOiJuZXd3d3cgbmFtZSIsImVtYWlsIjoic2F1cmFiaEBhc2Rhcy5jb20iLCJlbWFpbF92ZXJpZmllZCI6MCwiand0RGF0YSI6eyJleHBpcmVzSW4iOiI5MGgifSwiaWF0IjoxNTk5OTE2MzU4LCJleHAiOjE2MDAyNDAzNTh9.ObRw0SJeeAtiulGbVOyVvx1vU4v_S0_na0JFsjv3FY8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/users/wish-list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"wish-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add to wish list",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTI2MzksIm5hbWUiOiJuZXd3d3cgbmFtZSIsImVtYWlsIjoic2F1cmFiaEBhc2Rhcy5jb20iLCJlbWFpbF92ZXJpZmllZCI6MCwiand0RGF0YSI6eyJleHBpcmVzSW4iOiI5MGgifSwiaWF0IjoxNTk5OTE2MzU4LCJleHAiOjE2MDAyNDAzNTh9.ObRw0SJeeAtiulGbVOyVvx1vU4v_S0_na0JFsjv3FY8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"product_id\": 1}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/users/wish-list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"wish-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibWVtYmVyX2lkIjpudWxsLCJuYW1lIjoic3VwZXIgYWRtaW4iLCJlbWFpbCI6InNhdXJhYmguc0Bob21lc2Z5LmluIiwicm9sZSI6InN1cGVydXNlciIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJzZWNyZXQiOiJBU2JBMnhjanBmOHk1YVNVRnNOQjJxTjV5eW1VQlNzNmVzM3FIb0ZwR2tlYzc1UkNlQmI4Y3BLYXVHZWZ3NXF5NCIsImp3dERhdGEiOnsiZXhwaXJlc0luIjoiNTBoIn0sImlhdCI6MTU5MjA1NjkwNSwiZXhwIjoxNTkyMjM2OTA1fQ.lL1cBa970ZNJU4m_6o1F2kM65mWMuMYTHRldnIJhikg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/users/35912",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"35912"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibWVtYmVyX2lkIjpudWxsLCJuYW1lIjoic3VwZXIgYWRtaW4iLCJlbWFpbCI6InNhdXJhYmguc0Bob21lc2Z5LmluIiwicm9sZSI6InN1cGVydXNlciIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJzZWNyZXQiOiJBU2JBMnhjanBmOHk1YVNVRnNOQjJxTjV5eW1VQlNzNmVzM3FIb0ZwR2tlYzc1UkNlQmI4Y3BLYXVHZWZ3NXF5NCIsImp3dERhdGEiOnsiZXhwaXJlc0luIjoiOTBoIn0sImlhdCI6MTU5NDMxMDQ5MSwiZXhwIjoxNTk0NjM0NDkxfQ.uzTUXzNCNgr3FwVAld5oQfgjRGFqN6flElCpNcyLkPU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"is_active\":1,\"mobile_number\":9876545678}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/users/5028",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"5028"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "autocomplete",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywibmFtZSI6Im1hZ25ldHRsIHVzZXIiLCJlbWFpbCI6InNhdXJhYmguc0Bob21lc2Z5LmluIiwicm9sZSI6Im1hZ25ldHRsIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInNlY3JldCI6IkFTYkEyeGNqcGY4eTVhU1VGc05CMnFONXl5bVVCU3M2ZXMzcUhvRnBHa2VjNzVSQ2VCYjhjcEthdUdlZnc1cXk0Iiwiand0RGF0YSI6eyJleHBpcmVzSW4iOiI1MGgifSwiaWF0IjoxNTg5OTc0NTU1LCJleHAiOjE1OTAxNTQ1NTV9.F270Au_yKqQbJEwX_LOl6vzHDLOjDbOANBRTBq6GNuI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/users/autocomplete/customer?q=s",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"autocomplete",
+						"customer"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "s"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
